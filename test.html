@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoodelGames</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        :root {
+            --grid-margin-mobile: 16px;
+            --grid-margin-tablet: 32px;
+            --grid-gutter: 16px;
+            --bg-dark: #2A2B31;
+            --input-bg: #3A3B41;
+            --text-light: #FFFFFF;
+        }
+
+        body {
+            background-color: #F8F9FE;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--grid-margin-mobile);
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--bg-dark);
+            padding: 4rem 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            max-width: 500px;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+        }
+
+        .team-illustration {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 0;
+            background-color: #F8F9FE;
+            color: #333;
+        }
+
+        .contact-text {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-email {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--input-bg);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .clear-button {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .send-button {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            background: #6C5CE7;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            opacity: 0.8;
+        }
+
+        /* Tablet Grid (744px) */
+        @media (min-width: 744px) {
+            .container {
+                padding: 0 var(--grid-margin-tablet);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Mobile Grid (393px) */
+        @media (max-width: 393px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">WHO WE ARE</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>NoodelGames is an Indie game studio based In Ulaanbaatar, Mongolia, Dedicated To Fun, Innovation, And Immersion.</p>
+                </div>
+                <img src="/api/placeholder/500/300" alt="Team illustration" class="team-illustration">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #333;">CONTACT US</h2>
+            <p class="contact-text">Join our amazing community! for support or investment inquiries, contact <span class="contact-email">noodelgames@gmail.com</span></p>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Name">
+                    <button type="button" class="clear-button">✕</button>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="E-mail">
+                    <button type="button" class="clear-button">✕</button>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit" class="send-button">➤</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>📍 Based In Ulaanbaatar, Mongolia</p>
+            <p>📧 Contact: Noodelgames@gmail.com</p>
+            <p>© 2025 NoodelGames. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Clear input fields
+        document.querySelectorAll('.clear-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                input.value = '';
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            console.log('Form submitted:', Object.fromEntries(formData));
+            // Add your form submission logic here
+        });
+    </script>
+</body>
+</html>

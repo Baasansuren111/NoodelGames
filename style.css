@@ -1,0 +1,567 @@
+/* ✅ Тохиргооны үндсэн утгууд */
+:root {
+    /* 🟢 Colors */
+    --primary-color: #FF5841;
+    --primary-hover: #ca3b29;
+    --text-color: #302F3D;
+    --background-color: #f5f5f5;
+    --button-text-color: white;
+    --nav-bg-color: #f0f0ff;
+    --nav-hover-bg-color: #e0e0ff;
+    --bg-dark: #302F3D;
+    --input-bg: #302F3D;
+    --text-light: #FFFFFF;
+
+    /* 🔠 Font */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    --header-font-size: 48px;
+    --body-font-size: 20px;
+    --nav-font-size: 20px;
+    --button-font-size: 16px;
+    --section-title-font-size: 24px;
+
+    /* Mobile font size */
+    --header-font-size-mobile: 16px;    
+    --body-font-size-mobile: 12px;
+    --nav-font-size-mobile: 12px;
+    --button-font-size-mobile: 12px;
+    --secion-title-font-size-mobile: 14px;
+    /*Ipad font size */
+    --header-font-size-ipad: 32px;
+    --body-font-size-ipad: 15px;
+    --nav-font-size-ipad: 15px;
+    --button-font-size-ipad: 14px;
+    --section-title-font-size-ipad: 32px;
+    /* 📏 Sizes */
+    --border-radius: 10px;
+    --button-height: 50px;
+    --game-image-height: 300px;
+
+    /* 🟦 Mobile Grid Variables */
+    --mobile-width: 393px;
+    --mobile-margin: 16px;
+    --mobile-gutter: 16px;
+    --mobile-columns: 4;
+
+    /* 🟨 iPad Grid Variables */
+    --ipad-width: 744px;
+    --ipad-margin: 32px;
+    --ipad-gutter: 16px;
+    --ipad-columns: 8;
+}
+
+/* 🖌️ Ерөнхий тохиргоо */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: #F8F9FE;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 📱 Grid Container */
+.grid-container {
+    width: 100%;
+    max-width: var(--mobile-width);
+    margin: 0 auto;
+    padding: 0 var(--mobile-margin);
+    display: grid;
+    grid-template-columns: repeat(var(--mobile-columns), 1fr);
+    gap: var(--mobile-gutter);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--mobile-margin);
+}
+
+/* 🟡 Header болон Nav */
+.header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 55px;
+    width: 115px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: var(--nav-font-size);
+    background-color: var(--nav-bg-color);
+    padding: 12px 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    width: 112px;
+    height: 40px;
+}
+
+.nav a:hover {
+    background-color: var(--nav-hover-bg-color);
+}
+
+/* 🟢 Hero Section */
+.hero-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-height: 720px;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Зурагны харьцааг тогтмол байлгана */
+}
+
+.hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/image/main_background_picture.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: var(--header-font-size);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: var(--body-font-size);
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+/* 🎮 Game Section */
+.game-section {
+    padding: 4rem 0;
+    background: var(--background-color);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: var(--section-title-font-size);
+    font-weight: bold;
+    grid-column: 1 / -1;
+}
+
+.game-card {
+    grid-column: 1 / -1;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    flex-direction: row;
+    transition: transform 0.3s ease;
+}
+
+.game-image {
+    width: 50%;
+    height: var(--game-image-height);
+    background: url('assets/image/makemefloat_img.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-info {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.game-info p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 🔴 Button */
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.button {
+    padding: 0.8rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+    background: var(--primary-color);
+    color: var(--button-text-color);
+    font-size: var(--button-font-size);
+    border: none;
+    text-align: center;
+    min-width: 180px;
+    height: var(--button-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background-color: var(--primary-hover);
+}
+
+/* 🟣 Social link - баруун доод буланд */
+.social-link {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+
+.social-link a {
+    display: inline-block;
+    margin: 0 3px;
+    padding: 3px;
+    transition: transform 0.3s ease;
+}
+
+.social-link a:hover {
+    transform: scale(1.2);
+}
+
+.social-link img {
+    width: 20px;
+    height: 20px;
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--bg-dark);
+    padding: 4rem 0;
+}
+
+#about-title {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: var(--section-title-font-size);
+    color: white;
+}
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    max-width: 500px;
+    opacity: 0.9;
+    color: var(--text-light);
+}
+
+.team-illustration {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 0;
+    background-color: #F8F9FE;
+    color: #333;
+}
+
+.contact-text {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-email {
+    color: #000;
+    font-weight: bold;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.clear-button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+}
+
+.send-button {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background: #6C5CE7;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+/* 📱 Mobile тохиргоо */
+@media (max-width: 600px) {
+    .grid-container {
+        max-width: var(--mobile-width);
+        padding: 0 var(--mobile-margin);
+        grid-template-columns: repeat(var(--mobile-columns), 1fr);
+        gap: var(--mobile-gutter);
+    }
+    .nav {
+        display: none;
+    }
+    .social-link img {
+        width: 28px;
+        height: 28px;
+    }
+    .social-link a {
+        margin: 0 8px;
+    }
+    .hero h1 {
+        font-size: var(--header-font-size-mobile);
+    }
+    .nav a {
+        font-size: var(--nav-font-size-mobile);
+    }
+    .button {
+        font-size: var(--button-font-size-mobile);
+    }
+    .hero p {
+        font-size: var(--body-font-size-mobile);
+    }
+    .section-title {
+        font-size: var(--section-title-font-size-mobile);
+    }
+    #about-title {
+        font-size: var(--section-title-font-size-mobile);
+    }
+    /* 🟣 Social link - баруун доод буланд */
+    .social-link {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column; /* Босоо байрлал */
+        align-items: center;    /* Төвд байрлуулах */
+    }
+    
+    .social-link a {
+        display: inline-block;
+        margin: 2px 0;         /* Дээш доош зай */
+        padding: 2px;
+        transition: transform 0.3s ease;
+    }
+    
+    .social-link a:hover {
+        transform: scale(1.2);
+    }
+    
+    .social-link img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* 📏 iPad тохиргоо */
+@media (min-width: 744px) {
+    .grid-container {
+        max-width: var(--ipad-width);
+        padding: 0 var(--ipad-margin);
+        grid-template-columns: repeat(var(--ipad-columns), 1fr);
+        gap: var(--ipad-gutter);
+    }
+    
+    .container {
+        padding: 0 var(--ipad-margin);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero h1 {
+        font-size: var(--header-font-size-ipad);
+    }
+    .nav a {
+        font-size: var(--nav-font-size-ipad);
+    }
+    .button {
+        font-size: var(--button-font-size-ipad);
+    }
+    .hero p {
+        font-size: var(--body-font-size-ipad);
+    }
+    .section-title {
+        font-size: var(--section-title-font-size-ipad);
+    }
+    #about-title {
+        font-size: var(--section-title-font-size-ipad);
+    }
+}
+
+/* 💡 Responsive тохиргоо */
+@media (max-width: 768px) {
+    .game-card {
+        flex-direction: column;
+    }
+
+    .game-image,
+    .game-info {
+        width: 100%;
+    }
+
+    .hero-container {
+        padding-top: calc(100% / 1.2);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button {
+        text-align: center;
+    }
+    #about-title {
+        font-size: var(--section-title-font-size-ipad);
+    }
+}
+
+/* 📏 Small Mobile тохиргоо */
+@media (max-width: 393px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: var(--header-font-size-mobile);
+    }
+    .nav a {
+        font-size: var(--nav-font-size-mobile);
+    }
+    .button {
+        font-size: var(--button-font-size-mobile);
+    }
+    .hero p {
+        font-size: var(--body-font-size-mobile);
+    }
+    .section-title {
+        font-size: var(--section-title-font-size-mobile);
+    }
+    #about-title {
+        font-size: var(--section-title-font-size-mobile);
+    }
+}

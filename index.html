@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoodelGames</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header"> 
+        <a href="#home" class="logo">
+            <img src="assets/image/logo.jpg" alt="">
+        </a>        
+        <nav class="nav">
+            <a href="#games">Games</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    
+        <div class="social-link">
+            <a href="https://www.facebook.com/NoodelGames" target="_blank">
+                <img src="assets/logos/facebook.png" alt="Facebook" />
+            </a>
+            <a href="https://x.com/Noodel_Games" target="_blank">
+                <img src="assets/logos/twitter.png" alt="Twitter" />
+            </a>
+            <a href="https://store.steampowered.com/app/2165530/Make_me_Float/" target="_blank">
+                <img src="assets/logos/steam.png" alt="Discord" />
+            </a>
+            <a href="https://www.instagram.com/noodelgames/" target="_blank">
+                <img src="assets/logos/instagram.png" alt="Instagram" />
+            </a>
+            <a href="https://noodel-games.itch.io/makemefloat" target="_blank">
+                <img src="assets/logos/itchio.png" alt="Itch" />
+            </a>
+        </div>
+        
+    </header>
+
+    <div class="hero-container" id="home">
+        <section class="hero">
+            <h1>Welcome to NoodelGames</h1>
+            <p>We create amazing gaming experiences that bring joy to players around the world.</p>
+        </section>
+    </div>
+
+    <section class="game-section" id="games">
+        <div class="grid-container">
+            <h2 class="section-title">OUR FIRST GAME RELEASES SOON</h2>
+            <div class="game-card">
+                <div class="game-image"></div>
+                <div class="game-info">
+                    <h3>Make me Float</h3>
+                    <p>Co-op physics platformer – Gus & Poe as balloon heroes, linked by a tube. Float, grab, fight through 15 levels in a story of friendship and freedom.</p>
+                    <div class="button-group">
+                        <a href="https://store.steampowered.com/app/2165530/Make_me_Float/" class="button secondary-button" target="_blank">WISHLIST ON STEAM</a>
+                    </div>
+                    
+                </div>
+            </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title" id="about-title">WHO WE ARE</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>NoodelGames is an Indie game studio based In Ulaanbaatar, Mongolia, Dedicated To Fun, Innovation, And Immersion.</p>
+                </div>
+                <img src="assets/image/img_about.png" alt="Team illustration" class="team-illustration">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #333;">CONTACT US</h2>
+            <p class="contact-text">Join our amazing community! for support or investment inquiries, contact <span class="contact-email">noodelgames@gmail.com</span></p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <button type="button" class="clear-button" onclick="clearField('name')">✕</button>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <button type="button" class="clear-button" onclick="clearField('email')">✕</button>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="send-button">➤</button>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>📍 Based In Ulaanbaatar, Mongolia</p>
+            <p>📧 Contact: Noodelgames@gmail.com</p>
+            <p>© 2025 NoodelGames. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        // Scripts remain the same
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.header').style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            } else {
+                document.querySelector('.header').style.boxShadow = 'none';
+            }
+        });
+                // Clear input fields
+                document.querySelectorAll('.clear-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                input.value = '';
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            console.log('Form submitted:', Object.fromEntries(formData));
+            // Add your form submission logic here
+        });
+    </script>
+    <script src="mail.js"></script>
+</body>
+</html>
